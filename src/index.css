@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #faf7f2;
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(253, 226, 237, 0.5) 0px, transparent 50%),
+      radial-gradient(at 85% 25%, rgba(243, 232, 255, 0.55) 0px, transparent 50%),
+      radial-gradient(at 50% 70%, rgba(254, 243, 199, 0.45) 0px, transparent 60%),
+      radial-gradient(at 80% 90%, rgba(255, 228, 230, 0.5) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+/* Custom aesthetic styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(186, 155, 175, 0.15),
+              0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 14px rgba(220, 180, 200, 0.2);
+}
+
+/* Scrapbook washi tape effect */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(251, 207, 232, 0.7);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  opacity: 0.85;
+  clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 4% 100%);
+  z-index: 10;
+}
+
+.washi-tape-gold {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(254, 240, 138, 0.7);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  opacity: 0.85;
+  clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+  z-index: 10;
+}
+
+/* Flickering candle flame */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.8));
+  }
+  25% {
+    transform: scale(1.08, 0.95) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.95));
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.7));
+  }
+  75% {
+    transform: scale(1.04, 1.02) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9));
+  }
+}
+
+.candle-flame {
+  animation: flicker 1.2s ease-in-out infinite alternate;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(253, 242, 244, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 182, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 182, 0.6);
+}
